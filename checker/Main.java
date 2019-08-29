@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws SAXException, IOException {
 
-        ANTLRInputStream input = new ANTLRInputStream(System.in);
+        ANTLRInputStream input = new ANTLRFileStream(args[0]);
         Java8Lexer lexer = new Java8Lexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokens);
@@ -27,9 +27,9 @@ public class Main {
         int syntaxErrors = parser.getNumberOfSyntaxErrors();
 
         if (syntaxErrors == 0) {
-            System.out.println("Parser: PASS");
+            System.out.println(args[0] + ": Parser: PASS");
         } else {
-            System.out.println("Parser: FAILED (" + syntaxErrors + " syntax errors)");
+            System.out.println(args[0] + ": Parser: FAILED (" + syntaxErrors + " syntax errors)");
         }
     }
 }

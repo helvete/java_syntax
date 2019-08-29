@@ -10,7 +10,7 @@ run: antlr4-4.5.3.jar Java8.g4
 	( test -f ./checker/Java8BaseListener.j || mv ./checker/Java8BaseListener.java ./checker/Java8BaseListener.j ) && cat ./prepend_package ./checker/Java8BaseListener.j > ./checker/Java8BaseListener.java
 	javac -cp antlr4-4.5.3.jar ./checker/*.java
 	jar cfm checker.jar Manifest.txt checker/*.class
-	java -jar ./checker.jar < ./checker/Main.java
+	java -jar ./checker.jar ./checker/Main.java
 
 antlr4-4.5.3.jar:
 	wget https://repo1.maven.org/maven2/org/antlr/antlr4/4.5.3/antlr4-4.5.3.jar -O antlr4-4.5.3.jar
