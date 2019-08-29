@@ -1,5 +1,9 @@
 checker/Java8*
 checker/*.class
+checker/Java8Lexer.j
+checker/Java8Parser.j
+checker/Java8Listener.j
+checker/Java8BaseListener.j
 Java8.g4
 antlr4-4.5.3.jar
 checker.jar
